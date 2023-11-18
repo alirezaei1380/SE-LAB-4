@@ -1,4 +1,4 @@
 public interface TransitionStrategy {
 
-    int getPrice(int weight);
+    double getPrice(int weight);
 }
