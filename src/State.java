@@ -1,3 +1,3 @@
-interface State {
+public interface State {
     void printStatus();
 }
