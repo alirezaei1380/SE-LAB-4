@@ -26,7 +26,7 @@ class ShipmentTests {
         System.setOut(new PrintStream(outContent));
         Shipment shipment = new Shipment(24);
         shipment.setState(new DeliveredState());
-        assertEquals(shipment.getState());
+        shipment.getState();
         assertEquals("package is delivered", outContent.toString());
         System.setOut(originalOut);
     }
