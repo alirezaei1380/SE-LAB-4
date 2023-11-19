@@ -163,3 +163,51 @@ public class Main {
 }
 
 ```
+
+## Questions
+
+### 1
+Creational Design Patterns: These patterns are design patterns that deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. The basic form of object creation could result in design problems or added complexity to the design. Creational design patterns solve this problem by somehow controlling this object creation.\
+
+Structural Design Patterns: This kind of pattern is a blueprint of how different objects and classes are combined together to form a bigger structure for achieving multiple goals altogether. The patterns in structural designs show how unique pieces of a system can be combined together in an extensible and flexible manner. So, with the help structural design pattern we can target and change a specific parts of the structure without changing the entire structure.\
+
+Behavioral Design Patterns: These patterns are design patterns that identify common communication patterns between objects and realize these patterns. By doing so, these patterns increase flexibility in carrying out this communication.
+
+### 2
+Behavioral Design Patterns
+
+### 3
+Singleton: It is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.\
+We choose this pattern to make sure that we get the same instance everytime we access the class.\
+
+To implement this pattern we should first make the constructor private so that no one can make a new instance. Then we add a private static attribute to save our single instance of the class. Finally we add a new method called getInstance for other classes to access the single instance of the class.\
+Shipment class will look like this after our changes (skipped unchanged parts):
+```java
+public class Shipment {
+    private static Shipment shipment;
+    private State state;
+    private TransitionStrategy transitionStrategy;
+    private final float weight;
+
+    private Shipment(float weight) {
+        this.weight = weight;
+    }
+
+    public static Shipment getInstance(float weight) {
+        if (shipment == null) {
+            shipment = new Shipment(weight);
+        }
+        return shipment;
+    }
+}
+```
+### 4
+SRP: It Violates the Single Responsibility Principle. The pattern solves two problems at the time (Ensuring that a class has just a single instance and Providing a global access point to that instance).
+
+OCP: For a class to be "open" it must be possible to inherit from it. Inheritance is an "is-a" relationship. If you inherit from a singleton-class then instances of the child-class are also instances of the parent class due to the "is-a" relationship, meaning you can suddenly have multiple instances of the singleton class. If the singleton class inhibits inheritance, it's no longer "open". If a singleton class allows inheritance, and is "open" for extension, then it can no longer enforce the singleton pattern.
+
+LSP: The Singleton pattern itself doesn't inherently violate the Liskov Substitution Principle. However, the implementation of the Singleton pattern can sometimes lead to issues that might indirectly conflict with the LSP if not designed carefully (like last one).
+
+ISP: The Singleton pattern itself does not inherently violate the Interface Segregation Principle (It could violate if the interface is designed poorly).
+
+DIP: It dosen't necessarily violate Dependency Inversion Principle but like the last one, it could violate if it is designed poorly.
