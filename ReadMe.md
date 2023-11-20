@@ -208,6 +208,6 @@ OCP: For a class to be "open" it must be possible to inherit from it. Inheritanc
 
 LSP: The Singleton pattern itself doesn't inherently violate the Liskov Substitution Principle. However, the implementation of the Singleton pattern can sometimes lead to issues that might indirectly conflict with the LSP if not designed carefully (like last one).
 
-ISP: The Singleton pattern itself does not inherently violate the Interface Segregation Principle (It could violate if the interface is designed poorly).
+ISP: The Singleton pattern itself does not inherently violate the Interface Segregation Principle (It could violate if the interface is designed poorly). So we can have a singleton interface implementation which only has a single function called getInstance besides some other interfaces which  are trying to implement some arbitrary features.
 
-DIP: It dosen't necessarily violate Dependency Inversion Principle but like the last one, it could violate if it is designed poorly.
+DIP: It dosen't necessarily violate Dependency Inversion Principle but like the last one, it could violate if it is designed poorly. Actually singleton design pattern has no complex and no intersection with the way of the implemented classes relation with other classes.
