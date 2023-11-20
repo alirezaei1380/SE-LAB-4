@@ -1,3 +1,8 @@
+Ali Rezaei 98105784
+
+Armin Delgosar Maher 98101544
+
+
 # Design Patterns Examination
 
 ## Report
